@@ -6,13 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="/leads">Go Back To Leads</a>
-
-    <h1>{{lead.first_name}}'s details</h1>
-    <p>
-        Fullname: {{lead.first_name}} {{lead.last_name}}
-        <br>
-        Age : {{lead.age}}
-    </p>
+    <a href="/leads">Go back to leads</a>
+    <hr>
+    <h1>create a new lead</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+    
+    
 </body>
 </html>
